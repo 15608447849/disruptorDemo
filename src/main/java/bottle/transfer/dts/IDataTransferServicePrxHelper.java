@@ -25,115 +25,236 @@ package bottle.transfer.dts;
  **/
 public final class IDataTransferServicePrxHelper extends Ice.ObjectPrxHelperBase implements IDataTransferServicePrx
 {
-    private static final String __requestFileUpload_name = "requestFileUpload";
+    private static final String __complete_name = "complete";
 
-    public TransferSequence[] requestFileUpload(FileUploadRequest request)
+    public void complete(String tag)
     {
-        return requestFileUpload(request, null, false);
+        complete(tag, null, false);
     }
 
-    public TransferSequence[] requestFileUpload(FileUploadRequest request, java.util.Map<String, String> __ctx)
+    public void complete(String tag, java.util.Map<String, String> __ctx)
     {
-        return requestFileUpload(request, __ctx, true);
+        complete(tag, __ctx, true);
     }
 
-    private TransferSequence[] requestFileUpload(FileUploadRequest request, java.util.Map<String, String> __ctx, boolean __explicitCtx)
+    private void complete(String tag, java.util.Map<String, String> __ctx, boolean __explicitCtx)
     {
-        __checkTwowayOnly(__requestFileUpload_name);
-        return end_requestFileUpload(begin_requestFileUpload(request, __ctx, __explicitCtx, true, null));
+        end_complete(begin_complete(tag, __ctx, __explicitCtx, true, null));
     }
 
-    public Ice.AsyncResult begin_requestFileUpload(FileUploadRequest request)
+    public Ice.AsyncResult begin_complete(String tag)
     {
-        return begin_requestFileUpload(request, null, false, false, null);
+        return begin_complete(tag, null, false, false, null);
     }
 
-    public Ice.AsyncResult begin_requestFileUpload(FileUploadRequest request, java.util.Map<String, String> __ctx)
+    public Ice.AsyncResult begin_complete(String tag, java.util.Map<String, String> __ctx)
     {
-        return begin_requestFileUpload(request, __ctx, true, false, null);
+        return begin_complete(tag, __ctx, true, false, null);
     }
 
-    public Ice.AsyncResult begin_requestFileUpload(FileUploadRequest request, Ice.Callback __cb)
+    public Ice.AsyncResult begin_complete(String tag, Ice.Callback __cb)
     {
-        return begin_requestFileUpload(request, null, false, false, __cb);
+        return begin_complete(tag, null, false, false, __cb);
     }
 
-    public Ice.AsyncResult begin_requestFileUpload(FileUploadRequest request, java.util.Map<String, String> __ctx, Ice.Callback __cb)
+    public Ice.AsyncResult begin_complete(String tag, java.util.Map<String, String> __ctx, Ice.Callback __cb)
     {
-        return begin_requestFileUpload(request, __ctx, true, false, __cb);
+        return begin_complete(tag, __ctx, true, false, __cb);
     }
 
-    public Ice.AsyncResult begin_requestFileUpload(FileUploadRequest request, Callback_IDataTransferService_requestFileUpload __cb)
+    public Ice.AsyncResult begin_complete(String tag, Callback_IDataTransferService_complete __cb)
     {
-        return begin_requestFileUpload(request, null, false, false, __cb);
+        return begin_complete(tag, null, false, false, __cb);
     }
 
-    public Ice.AsyncResult begin_requestFileUpload(FileUploadRequest request, java.util.Map<String, String> __ctx, Callback_IDataTransferService_requestFileUpload __cb)
+    public Ice.AsyncResult begin_complete(String tag, java.util.Map<String, String> __ctx, Callback_IDataTransferService_complete __cb)
     {
-        return begin_requestFileUpload(request, __ctx, true, false, __cb);
+        return begin_complete(tag, __ctx, true, false, __cb);
     }
 
-    public Ice.AsyncResult begin_requestFileUpload(FileUploadRequest request, 
-                                                   IceInternal.Functional_GenericCallback1<TransferSequence[]> __responseCb, 
-                                                   IceInternal.Functional_GenericCallback1<Ice.Exception> __exceptionCb)
+    public Ice.AsyncResult begin_complete(String tag, 
+                                          IceInternal.Functional_VoidCallback __responseCb, 
+                                          IceInternal.Functional_GenericCallback1<Ice.Exception> __exceptionCb)
     {
-        return begin_requestFileUpload(request, null, false, false, __responseCb, __exceptionCb, null);
+        return begin_complete(tag, null, false, false, __responseCb, __exceptionCb, null);
     }
 
-    public Ice.AsyncResult begin_requestFileUpload(FileUploadRequest request, 
-                                                   IceInternal.Functional_GenericCallback1<TransferSequence[]> __responseCb, 
-                                                   IceInternal.Functional_GenericCallback1<Ice.Exception> __exceptionCb, 
-                                                   IceInternal.Functional_BoolCallback __sentCb)
+    public Ice.AsyncResult begin_complete(String tag, 
+                                          IceInternal.Functional_VoidCallback __responseCb, 
+                                          IceInternal.Functional_GenericCallback1<Ice.Exception> __exceptionCb, 
+                                          IceInternal.Functional_BoolCallback __sentCb)
     {
-        return begin_requestFileUpload(request, null, false, false, __responseCb, __exceptionCb, __sentCb);
+        return begin_complete(tag, null, false, false, __responseCb, __exceptionCb, __sentCb);
     }
 
-    public Ice.AsyncResult begin_requestFileUpload(FileUploadRequest request, 
-                                                   java.util.Map<String, String> __ctx, 
-                                                   IceInternal.Functional_GenericCallback1<TransferSequence[]> __responseCb, 
-                                                   IceInternal.Functional_GenericCallback1<Ice.Exception> __exceptionCb)
+    public Ice.AsyncResult begin_complete(String tag, 
+                                          java.util.Map<String, String> __ctx, 
+                                          IceInternal.Functional_VoidCallback __responseCb, 
+                                          IceInternal.Functional_GenericCallback1<Ice.Exception> __exceptionCb)
     {
-        return begin_requestFileUpload(request, __ctx, true, false, __responseCb, __exceptionCb, null);
+        return begin_complete(tag, __ctx, true, false, __responseCb, __exceptionCb, null);
     }
 
-    public Ice.AsyncResult begin_requestFileUpload(FileUploadRequest request, 
-                                                   java.util.Map<String, String> __ctx, 
-                                                   IceInternal.Functional_GenericCallback1<TransferSequence[]> __responseCb, 
-                                                   IceInternal.Functional_GenericCallback1<Ice.Exception> __exceptionCb, 
-                                                   IceInternal.Functional_BoolCallback __sentCb)
+    public Ice.AsyncResult begin_complete(String tag, 
+                                          java.util.Map<String, String> __ctx, 
+                                          IceInternal.Functional_VoidCallback __responseCb, 
+                                          IceInternal.Functional_GenericCallback1<Ice.Exception> __exceptionCb, 
+                                          IceInternal.Functional_BoolCallback __sentCb)
     {
-        return begin_requestFileUpload(request, __ctx, true, false, __responseCb, __exceptionCb, __sentCb);
+        return begin_complete(tag, __ctx, true, false, __responseCb, __exceptionCb, __sentCb);
     }
 
-    private Ice.AsyncResult begin_requestFileUpload(FileUploadRequest request, 
-                                                    java.util.Map<String, String> __ctx, 
-                                                    boolean __explicitCtx, 
-                                                    boolean __synchronous, 
-                                                    IceInternal.Functional_GenericCallback1<TransferSequence[]> __responseCb, 
-                                                    IceInternal.Functional_GenericCallback1<Ice.Exception> __exceptionCb, 
-                                                    IceInternal.Functional_BoolCallback __sentCb)
+    private Ice.AsyncResult begin_complete(String tag, 
+                                           java.util.Map<String, String> __ctx, 
+                                           boolean __explicitCtx, 
+                                           boolean __synchronous, 
+                                           IceInternal.Functional_VoidCallback __responseCb, 
+                                           IceInternal.Functional_GenericCallback1<Ice.Exception> __exceptionCb, 
+                                           IceInternal.Functional_BoolCallback __sentCb)
     {
-        return begin_requestFileUpload(request, __ctx, __explicitCtx, __synchronous, 
-                                       new IceInternal.Functional_TwowayCallbackArg1<bottle.transfer.dts.TransferSequence[]>(__responseCb, __exceptionCb, __sentCb)
-                                           {
-                                               public final void __completed(Ice.AsyncResult __result)
-                                               {
-                                                   IDataTransferServicePrxHelper.__requestFileUpload_completed(this, __result);
-                                               }
-                                           });
+        return begin_complete(tag, 
+                              __ctx, 
+                              __explicitCtx, 
+                              __synchronous, 
+                              new IceInternal.Functional_OnewayCallback(__responseCb, __exceptionCb, __sentCb));
     }
 
-    private Ice.AsyncResult begin_requestFileUpload(FileUploadRequest request, 
-                                                    java.util.Map<String, String> __ctx, 
-                                                    boolean __explicitCtx, 
-                                                    boolean __synchronous, 
-                                                    IceInternal.CallbackBase __cb)
+    private Ice.AsyncResult begin_complete(String tag, 
+                                           java.util.Map<String, String> __ctx, 
+                                           boolean __explicitCtx, 
+                                           boolean __synchronous, 
+                                           IceInternal.CallbackBase __cb)
     {
-        __checkAsyncTwowayOnly(__requestFileUpload_name);
-        IceInternal.OutgoingAsync __result = getOutgoingAsync(__requestFileUpload_name, __cb);
+        IceInternal.OutgoingAsync __result = getOutgoingAsync(__complete_name, __cb);
         try
         {
-            __result.prepare(__requestFileUpload_name, Ice.OperationMode.Normal, __ctx, __explicitCtx, __synchronous);
+            __result.prepare(__complete_name, Ice.OperationMode.Normal, __ctx, __explicitCtx, __synchronous);
+            IceInternal.BasicStream __os = __result.startWriteParams(Ice.FormatType.DefaultFormat);
+            __os.writeString(tag);
+            __result.endWriteParams();
+            __result.invoke();
+        }
+        catch(Ice.Exception __ex)
+        {
+            __result.abort(__ex);
+        }
+        return __result;
+    }
+
+    public void end_complete(Ice.AsyncResult __iresult)
+    {
+        __end(__iresult, __complete_name);
+    }
+
+    private static final String __request_name = "request";
+
+    public FileUploadRespond request(FileUploadRequest request)
+    {
+        return request(request, null, false);
+    }
+
+    public FileUploadRespond request(FileUploadRequest request, java.util.Map<String, String> __ctx)
+    {
+        return request(request, __ctx, true);
+    }
+
+    private FileUploadRespond request(FileUploadRequest request, java.util.Map<String, String> __ctx, boolean __explicitCtx)
+    {
+        __checkTwowayOnly(__request_name);
+        return end_request(begin_request(request, __ctx, __explicitCtx, true, null));
+    }
+
+    public Ice.AsyncResult begin_request(FileUploadRequest request)
+    {
+        return begin_request(request, null, false, false, null);
+    }
+
+    public Ice.AsyncResult begin_request(FileUploadRequest request, java.util.Map<String, String> __ctx)
+    {
+        return begin_request(request, __ctx, true, false, null);
+    }
+
+    public Ice.AsyncResult begin_request(FileUploadRequest request, Ice.Callback __cb)
+    {
+        return begin_request(request, null, false, false, __cb);
+    }
+
+    public Ice.AsyncResult begin_request(FileUploadRequest request, java.util.Map<String, String> __ctx, Ice.Callback __cb)
+    {
+        return begin_request(request, __ctx, true, false, __cb);
+    }
+
+    public Ice.AsyncResult begin_request(FileUploadRequest request, Callback_IDataTransferService_request __cb)
+    {
+        return begin_request(request, null, false, false, __cb);
+    }
+
+    public Ice.AsyncResult begin_request(FileUploadRequest request, java.util.Map<String, String> __ctx, Callback_IDataTransferService_request __cb)
+    {
+        return begin_request(request, __ctx, true, false, __cb);
+    }
+
+    public Ice.AsyncResult begin_request(FileUploadRequest request, 
+                                         IceInternal.Functional_GenericCallback1<FileUploadRespond> __responseCb, 
+                                         IceInternal.Functional_GenericCallback1<Ice.Exception> __exceptionCb)
+    {
+        return begin_request(request, null, false, false, __responseCb, __exceptionCb, null);
+    }
+
+    public Ice.AsyncResult begin_request(FileUploadRequest request, 
+                                         IceInternal.Functional_GenericCallback1<FileUploadRespond> __responseCb, 
+                                         IceInternal.Functional_GenericCallback1<Ice.Exception> __exceptionCb, 
+                                         IceInternal.Functional_BoolCallback __sentCb)
+    {
+        return begin_request(request, null, false, false, __responseCb, __exceptionCb, __sentCb);
+    }
+
+    public Ice.AsyncResult begin_request(FileUploadRequest request, 
+                                         java.util.Map<String, String> __ctx, 
+                                         IceInternal.Functional_GenericCallback1<FileUploadRespond> __responseCb, 
+                                         IceInternal.Functional_GenericCallback1<Ice.Exception> __exceptionCb)
+    {
+        return begin_request(request, __ctx, true, false, __responseCb, __exceptionCb, null);
+    }
+
+    public Ice.AsyncResult begin_request(FileUploadRequest request, 
+                                         java.util.Map<String, String> __ctx, 
+                                         IceInternal.Functional_GenericCallback1<FileUploadRespond> __responseCb, 
+                                         IceInternal.Functional_GenericCallback1<Ice.Exception> __exceptionCb, 
+                                         IceInternal.Functional_BoolCallback __sentCb)
+    {
+        return begin_request(request, __ctx, true, false, __responseCb, __exceptionCb, __sentCb);
+    }
+
+    private Ice.AsyncResult begin_request(FileUploadRequest request, 
+                                          java.util.Map<String, String> __ctx, 
+                                          boolean __explicitCtx, 
+                                          boolean __synchronous, 
+                                          IceInternal.Functional_GenericCallback1<FileUploadRespond> __responseCb, 
+                                          IceInternal.Functional_GenericCallback1<Ice.Exception> __exceptionCb, 
+                                          IceInternal.Functional_BoolCallback __sentCb)
+    {
+        return begin_request(request, __ctx, __explicitCtx, __synchronous, 
+                             new IceInternal.Functional_TwowayCallbackArg1<bottle.transfer.dts.FileUploadRespond>(__responseCb, __exceptionCb, __sentCb)
+                                 {
+                                     public final void __completed(Ice.AsyncResult __result)
+                                     {
+                                         IDataTransferServicePrxHelper.__request_completed(this, __result);
+                                     }
+                                 });
+    }
+
+    private Ice.AsyncResult begin_request(FileUploadRequest request, 
+                                          java.util.Map<String, String> __ctx, 
+                                          boolean __explicitCtx, 
+                                          boolean __synchronous, 
+                                          IceInternal.CallbackBase __cb)
+    {
+        __checkAsyncTwowayOnly(__request_name);
+        IceInternal.OutgoingAsync __result = getOutgoingAsync(__request_name, __cb);
+        try
+        {
+            __result.prepare(__request_name, Ice.OperationMode.Normal, __ctx, __explicitCtx, __synchronous);
             IceInternal.BasicStream __os = __result.startWriteParams(Ice.FormatType.DefaultFormat);
             FileUploadRequest.__write(__os, request);
             __result.endWriteParams();
@@ -146,9 +267,9 @@ public final class IDataTransferServicePrxHelper extends Ice.ObjectPrxHelperBase
         return __result;
     }
 
-    public TransferSequence[] end_requestFileUpload(Ice.AsyncResult __iresult)
+    public FileUploadRespond end_request(Ice.AsyncResult __iresult)
     {
-        IceInternal.OutgoingAsync __result = IceInternal.OutgoingAsync.check(__iresult, this, __requestFileUpload_name);
+        IceInternal.OutgoingAsync __result = IceInternal.OutgoingAsync.check(__iresult, this, __request_name);
         try
         {
             if(!__result.__wait())
@@ -163,8 +284,8 @@ public final class IDataTransferServicePrxHelper extends Ice.ObjectPrxHelperBase
                 }
             }
             IceInternal.BasicStream __is = __result.startReadParams();
-            TransferSequence[] __ret;
-            __ret = FileSliceHelper.read(__is);
+            FileUploadRespond __ret = null;
+            __ret = FileUploadRespond.__read(__is, __ret);
             __result.endReadParams();
             return __ret;
         }
@@ -177,13 +298,13 @@ public final class IDataTransferServicePrxHelper extends Ice.ObjectPrxHelperBase
         }
     }
 
-    static public void __requestFileUpload_completed(Ice.TwowayCallbackArg1<TransferSequence[]> __cb, Ice.AsyncResult __result)
+    static public void __request_completed(Ice.TwowayCallbackArg1<FileUploadRespond> __cb, Ice.AsyncResult __result)
     {
         bottle.transfer.dts.IDataTransferServicePrx __proxy = (bottle.transfer.dts.IDataTransferServicePrx)__result.getProxy();
-        TransferSequence[] __ret = null;
+        FileUploadRespond __ret = null;
         try
         {
-            __ret = __proxy.end_requestFileUpload(__result);
+            __ret = __proxy.end_request(__result);
         }
         catch(Ice.LocalException __ex)
         {
@@ -198,238 +319,128 @@ public final class IDataTransferServicePrxHelper extends Ice.ObjectPrxHelperBase
         __cb.response(__ret);
     }
 
-    private static final String __uploadComplete_name = "uploadComplete";
+    private static final String __transfer_name = "transfer";
 
-    public void uploadComplete(long tag)
+    public void transfer(String tag, TransferSequence ts, byte[] data)
     {
-        uploadComplete(tag, null, false);
+        transfer(tag, ts, data, null, false);
     }
 
-    public void uploadComplete(long tag, java.util.Map<String, String> __ctx)
+    public void transfer(String tag, TransferSequence ts, byte[] data, java.util.Map<String, String> __ctx)
     {
-        uploadComplete(tag, __ctx, true);
+        transfer(tag, ts, data, __ctx, true);
     }
 
-    private void uploadComplete(long tag, java.util.Map<String, String> __ctx, boolean __explicitCtx)
+    private void transfer(String tag, TransferSequence ts, byte[] data, java.util.Map<String, String> __ctx, boolean __explicitCtx)
     {
-        end_uploadComplete(begin_uploadComplete(tag, __ctx, __explicitCtx, true, null));
+        end_transfer(begin_transfer(tag, ts, data, __ctx, __explicitCtx, true, null));
     }
 
-    public Ice.AsyncResult begin_uploadComplete(long tag)
+    public Ice.AsyncResult begin_transfer(String tag, TransferSequence ts, byte[] data)
     {
-        return begin_uploadComplete(tag, null, false, false, null);
+        return begin_transfer(tag, ts, data, null, false, false, null);
     }
 
-    public Ice.AsyncResult begin_uploadComplete(long tag, java.util.Map<String, String> __ctx)
+    public Ice.AsyncResult begin_transfer(String tag, TransferSequence ts, byte[] data, java.util.Map<String, String> __ctx)
     {
-        return begin_uploadComplete(tag, __ctx, true, false, null);
+        return begin_transfer(tag, ts, data, __ctx, true, false, null);
     }
 
-    public Ice.AsyncResult begin_uploadComplete(long tag, Ice.Callback __cb)
+    public Ice.AsyncResult begin_transfer(String tag, TransferSequence ts, byte[] data, Ice.Callback __cb)
     {
-        return begin_uploadComplete(tag, null, false, false, __cb);
+        return begin_transfer(tag, ts, data, null, false, false, __cb);
     }
 
-    public Ice.AsyncResult begin_uploadComplete(long tag, java.util.Map<String, String> __ctx, Ice.Callback __cb)
+    public Ice.AsyncResult begin_transfer(String tag, TransferSequence ts, byte[] data, java.util.Map<String, String> __ctx, Ice.Callback __cb)
     {
-        return begin_uploadComplete(tag, __ctx, true, false, __cb);
+        return begin_transfer(tag, ts, data, __ctx, true, false, __cb);
     }
 
-    public Ice.AsyncResult begin_uploadComplete(long tag, Callback_IDataTransferService_uploadComplete __cb)
+    public Ice.AsyncResult begin_transfer(String tag, TransferSequence ts, byte[] data, Callback_IDataTransferService_transfer __cb)
     {
-        return begin_uploadComplete(tag, null, false, false, __cb);
+        return begin_transfer(tag, ts, data, null, false, false, __cb);
     }
 
-    public Ice.AsyncResult begin_uploadComplete(long tag, java.util.Map<String, String> __ctx, Callback_IDataTransferService_uploadComplete __cb)
+    public Ice.AsyncResult begin_transfer(String tag, TransferSequence ts, byte[] data, java.util.Map<String, String> __ctx, Callback_IDataTransferService_transfer __cb)
     {
-        return begin_uploadComplete(tag, __ctx, true, false, __cb);
+        return begin_transfer(tag, ts, data, __ctx, true, false, __cb);
     }
 
-    public Ice.AsyncResult begin_uploadComplete(long tag, 
-                                                IceInternal.Functional_VoidCallback __responseCb, 
-                                                IceInternal.Functional_GenericCallback1<Ice.Exception> __exceptionCb)
+    public Ice.AsyncResult begin_transfer(String tag, 
+                                          TransferSequence ts, 
+                                          byte[] data, 
+                                          IceInternal.Functional_VoidCallback __responseCb, 
+                                          IceInternal.Functional_GenericCallback1<Ice.Exception> __exceptionCb)
     {
-        return begin_uploadComplete(tag, null, false, false, __responseCb, __exceptionCb, null);
+        return begin_transfer(tag, ts, data, null, false, false, __responseCb, __exceptionCb, null);
     }
 
-    public Ice.AsyncResult begin_uploadComplete(long tag, 
-                                                IceInternal.Functional_VoidCallback __responseCb, 
-                                                IceInternal.Functional_GenericCallback1<Ice.Exception> __exceptionCb, 
-                                                IceInternal.Functional_BoolCallback __sentCb)
+    public Ice.AsyncResult begin_transfer(String tag, 
+                                          TransferSequence ts, 
+                                          byte[] data, 
+                                          IceInternal.Functional_VoidCallback __responseCb, 
+                                          IceInternal.Functional_GenericCallback1<Ice.Exception> __exceptionCb, 
+                                          IceInternal.Functional_BoolCallback __sentCb)
     {
-        return begin_uploadComplete(tag, null, false, false, __responseCb, __exceptionCb, __sentCb);
+        return begin_transfer(tag, ts, data, null, false, false, __responseCb, __exceptionCb, __sentCb);
     }
 
-    public Ice.AsyncResult begin_uploadComplete(long tag, 
-                                                java.util.Map<String, String> __ctx, 
-                                                IceInternal.Functional_VoidCallback __responseCb, 
-                                                IceInternal.Functional_GenericCallback1<Ice.Exception> __exceptionCb)
+    public Ice.AsyncResult begin_transfer(String tag, 
+                                          TransferSequence ts, 
+                                          byte[] data, 
+                                          java.util.Map<String, String> __ctx, 
+                                          IceInternal.Functional_VoidCallback __responseCb, 
+                                          IceInternal.Functional_GenericCallback1<Ice.Exception> __exceptionCb)
     {
-        return begin_uploadComplete(tag, __ctx, true, false, __responseCb, __exceptionCb, null);
+        return begin_transfer(tag, ts, data, __ctx, true, false, __responseCb, __exceptionCb, null);
     }
 
-    public Ice.AsyncResult begin_uploadComplete(long tag, 
-                                                java.util.Map<String, String> __ctx, 
-                                                IceInternal.Functional_VoidCallback __responseCb, 
-                                                IceInternal.Functional_GenericCallback1<Ice.Exception> __exceptionCb, 
-                                                IceInternal.Functional_BoolCallback __sentCb)
+    public Ice.AsyncResult begin_transfer(String tag, 
+                                          TransferSequence ts, 
+                                          byte[] data, 
+                                          java.util.Map<String, String> __ctx, 
+                                          IceInternal.Functional_VoidCallback __responseCb, 
+                                          IceInternal.Functional_GenericCallback1<Ice.Exception> __exceptionCb, 
+                                          IceInternal.Functional_BoolCallback __sentCb)
     {
-        return begin_uploadComplete(tag, __ctx, true, false, __responseCb, __exceptionCb, __sentCb);
+        return begin_transfer(tag, ts, data, __ctx, true, false, __responseCb, __exceptionCb, __sentCb);
     }
 
-    private Ice.AsyncResult begin_uploadComplete(long tag, 
-                                                 java.util.Map<String, String> __ctx, 
-                                                 boolean __explicitCtx, 
-                                                 boolean __synchronous, 
-                                                 IceInternal.Functional_VoidCallback __responseCb, 
-                                                 IceInternal.Functional_GenericCallback1<Ice.Exception> __exceptionCb, 
-                                                 IceInternal.Functional_BoolCallback __sentCb)
+    private Ice.AsyncResult begin_transfer(String tag, 
+                                           TransferSequence ts, 
+                                           byte[] data, 
+                                           java.util.Map<String, String> __ctx, 
+                                           boolean __explicitCtx, 
+                                           boolean __synchronous, 
+                                           IceInternal.Functional_VoidCallback __responseCb, 
+                                           IceInternal.Functional_GenericCallback1<Ice.Exception> __exceptionCb, 
+                                           IceInternal.Functional_BoolCallback __sentCb)
     {
-        return begin_uploadComplete(tag, 
-                                    __ctx, 
-                                    __explicitCtx, 
-                                    __synchronous, 
-                                    new IceInternal.Functional_OnewayCallback(__responseCb, __exceptionCb, __sentCb));
+        return begin_transfer(tag, 
+                              ts, 
+                              data, 
+                              __ctx, 
+                              __explicitCtx, 
+                              __synchronous, 
+                              new IceInternal.Functional_OnewayCallback(__responseCb, __exceptionCb, __sentCb));
     }
 
-    private Ice.AsyncResult begin_uploadComplete(long tag, 
-                                                 java.util.Map<String, String> __ctx, 
-                                                 boolean __explicitCtx, 
-                                                 boolean __synchronous, 
-                                                 IceInternal.CallbackBase __cb)
+    private Ice.AsyncResult begin_transfer(String tag, 
+                                           TransferSequence ts, 
+                                           byte[] data, 
+                                           java.util.Map<String, String> __ctx, 
+                                           boolean __explicitCtx, 
+                                           boolean __synchronous, 
+                                           IceInternal.CallbackBase __cb)
     {
-        IceInternal.OutgoingAsync __result = getOutgoingAsync(__uploadComplete_name, __cb);
+        IceInternal.OutgoingAsync __result = getOutgoingAsync(__transfer_name, __cb);
         try
         {
-            __result.prepare(__uploadComplete_name, Ice.OperationMode.Normal, __ctx, __explicitCtx, __synchronous);
+            __result.prepare(__transfer_name, Ice.OperationMode.Normal, __ctx, __explicitCtx, __synchronous);
             IceInternal.BasicStream __os = __result.startWriteParams(Ice.FormatType.DefaultFormat);
-            __os.writeLong(tag);
-            __result.endWriteParams();
-            __result.invoke();
-        }
-        catch(Ice.Exception __ex)
-        {
-            __result.abort(__ex);
-        }
-        return __result;
-    }
-
-    public void end_uploadComplete(Ice.AsyncResult __iresult)
-    {
-        __end(__iresult, __uploadComplete_name);
-    }
-
-    private static final String __uploadSequence_name = "uploadSequence";
-
-    public int uploadSequence(TransferSequence ts)
-    {
-        return uploadSequence(ts, null, false);
-    }
-
-    public int uploadSequence(TransferSequence ts, java.util.Map<String, String> __ctx)
-    {
-        return uploadSequence(ts, __ctx, true);
-    }
-
-    private int uploadSequence(TransferSequence ts, java.util.Map<String, String> __ctx, boolean __explicitCtx)
-    {
-        __checkTwowayOnly(__uploadSequence_name);
-        return end_uploadSequence(begin_uploadSequence(ts, __ctx, __explicitCtx, true, null));
-    }
-
-    public Ice.AsyncResult begin_uploadSequence(TransferSequence ts)
-    {
-        return begin_uploadSequence(ts, null, false, false, null);
-    }
-
-    public Ice.AsyncResult begin_uploadSequence(TransferSequence ts, java.util.Map<String, String> __ctx)
-    {
-        return begin_uploadSequence(ts, __ctx, true, false, null);
-    }
-
-    public Ice.AsyncResult begin_uploadSequence(TransferSequence ts, Ice.Callback __cb)
-    {
-        return begin_uploadSequence(ts, null, false, false, __cb);
-    }
-
-    public Ice.AsyncResult begin_uploadSequence(TransferSequence ts, java.util.Map<String, String> __ctx, Ice.Callback __cb)
-    {
-        return begin_uploadSequence(ts, __ctx, true, false, __cb);
-    }
-
-    public Ice.AsyncResult begin_uploadSequence(TransferSequence ts, Callback_IDataTransferService_uploadSequence __cb)
-    {
-        return begin_uploadSequence(ts, null, false, false, __cb);
-    }
-
-    public Ice.AsyncResult begin_uploadSequence(TransferSequence ts, java.util.Map<String, String> __ctx, Callback_IDataTransferService_uploadSequence __cb)
-    {
-        return begin_uploadSequence(ts, __ctx, true, false, __cb);
-    }
-
-    public Ice.AsyncResult begin_uploadSequence(TransferSequence ts, 
-                                                IceInternal.Functional_IntCallback __responseCb, 
-                                                IceInternal.Functional_GenericCallback1<Ice.Exception> __exceptionCb)
-    {
-        return begin_uploadSequence(ts, null, false, false, __responseCb, __exceptionCb, null);
-    }
-
-    public Ice.AsyncResult begin_uploadSequence(TransferSequence ts, 
-                                                IceInternal.Functional_IntCallback __responseCb, 
-                                                IceInternal.Functional_GenericCallback1<Ice.Exception> __exceptionCb, 
-                                                IceInternal.Functional_BoolCallback __sentCb)
-    {
-        return begin_uploadSequence(ts, null, false, false, __responseCb, __exceptionCb, __sentCb);
-    }
-
-    public Ice.AsyncResult begin_uploadSequence(TransferSequence ts, 
-                                                java.util.Map<String, String> __ctx, 
-                                                IceInternal.Functional_IntCallback __responseCb, 
-                                                IceInternal.Functional_GenericCallback1<Ice.Exception> __exceptionCb)
-    {
-        return begin_uploadSequence(ts, __ctx, true, false, __responseCb, __exceptionCb, null);
-    }
-
-    public Ice.AsyncResult begin_uploadSequence(TransferSequence ts, 
-                                                java.util.Map<String, String> __ctx, 
-                                                IceInternal.Functional_IntCallback __responseCb, 
-                                                IceInternal.Functional_GenericCallback1<Ice.Exception> __exceptionCb, 
-                                                IceInternal.Functional_BoolCallback __sentCb)
-    {
-        return begin_uploadSequence(ts, __ctx, true, false, __responseCb, __exceptionCb, __sentCb);
-    }
-
-    private Ice.AsyncResult begin_uploadSequence(TransferSequence ts, 
-                                                 java.util.Map<String, String> __ctx, 
-                                                 boolean __explicitCtx, 
-                                                 boolean __synchronous, 
-                                                 IceInternal.Functional_IntCallback __responseCb, 
-                                                 IceInternal.Functional_GenericCallback1<Ice.Exception> __exceptionCb, 
-                                                 IceInternal.Functional_BoolCallback __sentCb)
-    {
-        return begin_uploadSequence(ts, __ctx, __explicitCtx, __synchronous, 
-                                    new IceInternal.Functional_TwowayCallbackInt(__responseCb, __exceptionCb, __sentCb)
-                                        {
-                                            public final void __completed(Ice.AsyncResult __result)
-                                            {
-                                                IDataTransferServicePrxHelper.__uploadSequence_completed(this, __result);
-                                            }
-                                        });
-    }
-
-    private Ice.AsyncResult begin_uploadSequence(TransferSequence ts, 
-                                                 java.util.Map<String, String> __ctx, 
-                                                 boolean __explicitCtx, 
-                                                 boolean __synchronous, 
-                                                 IceInternal.CallbackBase __cb)
-    {
-        __checkAsyncTwowayOnly(__uploadSequence_name);
-        IceInternal.OutgoingAsync __result = getOutgoingAsync(__uploadSequence_name, __cb);
-        try
-        {
-            __result.prepare(__uploadSequence_name, Ice.OperationMode.Normal, __ctx, __explicitCtx, __synchronous);
-            IceInternal.BasicStream __os = __result.startWriteParams(Ice.FormatType.DefaultFormat);
+            __os.writeString(tag);
             TransferSequence.__write(__os, ts);
+            DataBytesHelper.write(__os, data);
             __result.endWriteParams();
             __result.invoke();
         }
@@ -440,56 +451,9 @@ public final class IDataTransferServicePrxHelper extends Ice.ObjectPrxHelperBase
         return __result;
     }
 
-    public int end_uploadSequence(Ice.AsyncResult __iresult)
+    public void end_transfer(Ice.AsyncResult __iresult)
     {
-        IceInternal.OutgoingAsync __result = IceInternal.OutgoingAsync.check(__iresult, this, __uploadSequence_name);
-        try
-        {
-            if(!__result.__wait())
-            {
-                try
-                {
-                    __result.throwUserException();
-                }
-                catch(Ice.UserException __ex)
-                {
-                    throw new Ice.UnknownUserException(__ex.ice_name(), __ex);
-                }
-            }
-            IceInternal.BasicStream __is = __result.startReadParams();
-            int __ret;
-            __ret = __is.readInt();
-            __result.endReadParams();
-            return __ret;
-        }
-        finally
-        {
-            if(__result != null)
-            {
-                __result.cacheMessageBuffers();
-            }
-        }
-    }
-
-    static public void __uploadSequence_completed(Ice.TwowayCallbackInt __cb, Ice.AsyncResult __result)
-    {
-        bottle.transfer.dts.IDataTransferServicePrx __proxy = (bottle.transfer.dts.IDataTransferServicePrx)__result.getProxy();
-        int __ret = 0;
-        try
-        {
-            __ret = __proxy.end_uploadSequence(__result);
-        }
-        catch(Ice.LocalException __ex)
-        {
-            __cb.exception(__ex);
-            return;
-        }
-        catch(Ice.SystemException __ex)
-        {
-            __cb.exception(__ex);
-            return;
-        }
-        __cb.response(__ret);
+        __end(__iresult, __transfer_name);
     }
 
     /**

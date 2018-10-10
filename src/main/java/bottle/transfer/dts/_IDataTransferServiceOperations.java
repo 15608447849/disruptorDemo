@@ -33,21 +33,20 @@ package bottle.transfer.dts;
 public interface _IDataTransferServiceOperations
 {
     /**
-     * 请求文件上传,获取文件上传标识,文件片段序列,失败返回空序列
-     * 文件路径(null则默认),文件名(null则默认),文件大小(必须大于0)
+     * 请求上传文件
      * @param __current The Current object for the invocation.
      **/
-    TransferSequence[] requestFileUpload(FileUploadRequest request, Ice.Current __current);
+    FileUploadRespond request(FileUploadRequest request, Ice.Current __current);
 
     /**
-     * 上传已经填充的文件数据片段 成功返回0 ,失败返回-1
+     * 上传已经填充的文件数据片段
      * @param __current The Current object for the invocation.
      **/
-    int uploadSequence(TransferSequence ts, Ice.Current __current);
+    void transfer(String tag, TransferSequence ts, byte[] data, Ice.Current __current);
 
     /**
      * 上传完成
      * @param __current The Current object for the invocation.
      **/
-    void uploadComplete(long tag, Ice.Current __current);
+    void complete(String tag, Ice.Current __current);
 }

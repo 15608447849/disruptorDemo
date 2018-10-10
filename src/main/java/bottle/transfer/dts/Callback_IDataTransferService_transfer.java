@@ -21,15 +21,9 @@
 package bottle.transfer.dts;
 
 /**
- * 请求文件上传,获取文件上传标识,文件片段序列,失败返回空序列
- * 文件路径(null则默认),文件名(null则默认),文件大小(必须大于0)
+ * 上传已经填充的文件数据片段
  **/
 
-public abstract class Callback_IDataTransferService_requestFileUpload
-    extends IceInternal.TwowayCallback implements Ice.TwowayCallbackArg1<bottle.transfer.dts.TransferSequence[]>
+public abstract class Callback_IDataTransferService_transfer extends Ice.OnewayCallback
 {
-    public final void __completed(Ice.AsyncResult __result)
-    {
-        IDataTransferServicePrxHelper.__requestFileUpload_completed(this, __result);
-    }
 }

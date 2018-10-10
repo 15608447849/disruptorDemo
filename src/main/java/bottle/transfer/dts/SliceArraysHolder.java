@@ -20,7 +20,16 @@
 
 package bottle.transfer.dts;
 
-public interface SliceMax
+public final class SliceArraysHolder extends Ice.Holder<TransferSequence[]>
 {
-    int value = 1024;
+    public
+    SliceArraysHolder()
+    {
+    }
+
+    public
+    SliceArraysHolder(TransferSequence[] value)
+    {
+        super(value);
+    }
 }

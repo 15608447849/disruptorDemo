@@ -81,79 +81,80 @@ public abstract class _IDataTransferServiceDisp extends Ice.ObjectImpl implement
     }
 
     /**
-     * 请求文件上传,获取文件上传标识,文件片段序列,失败返回空序列
-     * 文件路径(null则默认),文件名(null则默认),文件大小(必须大于0)
-     **/
-    public final TransferSequence[] requestFileUpload(FileUploadRequest request)
-    {
-        return requestFileUpload(request, null);
-    }
-
-    /**
      * 上传完成
      **/
-    public final void uploadComplete(long tag)
+    public final void complete(String tag)
     {
-        uploadComplete(tag, null);
+        complete(tag, null);
     }
 
     /**
-     * 上传已经填充的文件数据片段 成功返回0 ,失败返回-1
+     * 请求上传文件
      **/
-    public final int uploadSequence(TransferSequence ts)
+    public final FileUploadRespond request(FileUploadRequest request)
     {
-        return uploadSequence(ts, null);
+        return request(request, null);
     }
 
-    public static Ice.DispatchStatus ___requestFileUpload(IDataTransferService __obj, IceInternal.Incoming __inS, Ice.Current __current)
+    /**
+     * 上传已经填充的文件数据片段
+     **/
+    public final void transfer(String tag, TransferSequence ts, byte[] data)
+    {
+        transfer(tag, ts, data, null);
+    }
+
+    public static Ice.DispatchStatus ___request(IDataTransferService __obj, IceInternal.Incoming __inS, Ice.Current __current)
     {
         __checkMode(Ice.OperationMode.Normal, __current.mode);
         IceInternal.BasicStream __is = __inS.startReadParams();
         FileUploadRequest request = null;
         request = FileUploadRequest.__read(__is, request);
         __inS.endReadParams();
-        TransferSequence[] __ret = __obj.requestFileUpload(request, __current);
+        FileUploadRespond __ret = __obj.request(request, __current);
         IceInternal.BasicStream __os = __inS.__startWriteParams(Ice.FormatType.DefaultFormat);
-        FileSliceHelper.write(__os, __ret);
+        FileUploadRespond.__write(__os, __ret);
         __inS.__endWriteParams(true);
         return Ice.DispatchStatus.DispatchOK;
     }
 
-    public static Ice.DispatchStatus ___uploadSequence(IDataTransferService __obj, IceInternal.Incoming __inS, Ice.Current __current)
+    public static Ice.DispatchStatus ___transfer(IDataTransferService __obj, IceInternal.Incoming __inS, Ice.Current __current)
     {
         __checkMode(Ice.OperationMode.Normal, __current.mode);
         IceInternal.BasicStream __is = __inS.startReadParams();
+        String tag;
         TransferSequence ts = null;
+        byte[] data;
+        tag = __is.readString();
         ts = TransferSequence.__read(__is, ts);
+        data = DataBytesHelper.read(__is);
         __inS.endReadParams();
-        int __ret = __obj.uploadSequence(ts, __current);
-        IceInternal.BasicStream __os = __inS.__startWriteParams(Ice.FormatType.DefaultFormat);
-        __os.writeInt(__ret);
-        __inS.__endWriteParams(true);
+        __obj.transfer(tag, ts, data, __current);
+        __inS.__writeEmptyParams();
         return Ice.DispatchStatus.DispatchOK;
     }
 
-    public static Ice.DispatchStatus ___uploadComplete(IDataTransferService __obj, IceInternal.Incoming __inS, Ice.Current __current)
+    public static Ice.DispatchStatus ___complete(IDataTransferService __obj, IceInternal.Incoming __inS, Ice.Current __current)
     {
         __checkMode(Ice.OperationMode.Normal, __current.mode);
         IceInternal.BasicStream __is = __inS.startReadParams();
-        long tag;
-        tag = __is.readLong();
+        String tag;
+        tag = __is.readString();
         __inS.endReadParams();
-        __obj.uploadComplete(tag, __current);
+        __obj.complete(tag, __current);
         __inS.__writeEmptyParams();
         return Ice.DispatchStatus.DispatchOK;
     }
 
     private final static String[] __all =
     {
+        "complete",
         "ice_id",
         "ice_ids",
         "ice_isA",
         "ice_ping",
-        "requestFileUpload",
-        "uploadComplete",
-        "uploadSequence"
+        "request",
+        "transfer"
     };
 
     public Ice.DispatchStatus __dispatch(IceInternal.Incoming in, Ice.Current __current)
@@ -168,31 +169,31 @@ public abstract class _IDataTransferServiceDisp extends Ice.ObjectImpl implement
         {
             case 0:
             {
-                return ___ice_id(this, in, __current);
+                return ___complete(this, in, __current);
             }
             case 1:
             {
-                return ___ice_ids(this, in, __current);
+                return ___ice_id(this, in, __current);
             }
             case 2:
             {
-                return ___ice_isA(this, in, __current);
+                return ___ice_ids(this, in, __current);
             }
             case 3:
             {
-                return ___ice_ping(this, in, __current);
+                return ___ice_isA(this, in, __current);
             }
             case 4:
             {
-                return ___requestFileUpload(this, in, __current);
+                return ___ice_ping(this, in, __current);
             }
             case 5:
             {
-                return ___uploadComplete(this, in, __current);
+                return ___request(this, in, __current);
             }
             case 6:
             {
-                return ___uploadSequence(this, in, __current);
+                return ___transfer(this, in, __current);
             }
         }
 

@@ -20,23 +20,21 @@
 
 package bottle.transfer.dts;
 
-/**
- * 传输序列
- **/
-public class TransferSequence implements java.lang.Cloneable, java.io.Serializable
+public class FileUploadRespond implements java.lang.Cloneable, java.io.Serializable
 {
-    public long start;
+    public String tag;
 
-    public long size;
+    public TransferSequence[] array;
 
-    public TransferSequence()
+    public FileUploadRespond()
     {
+        tag = "";
     }
 
-    public TransferSequence(long start, long size)
+    public FileUploadRespond(String tag, TransferSequence[] array)
     {
-        this.start = start;
-        this.size = size;
+        this.tag = tag;
+        this.array = array;
     }
 
     public boolean
@@ -46,19 +44,22 @@ public class TransferSequence implements java.lang.Cloneable, java.io.Serializab
         {
             return true;
         }
-        TransferSequence _r = null;
-        if(rhs instanceof TransferSequence)
+        FileUploadRespond _r = null;
+        if(rhs instanceof FileUploadRespond)
         {
-            _r = (TransferSequence)rhs;
+            _r = (FileUploadRespond)rhs;
         }
 
         if(_r != null)
         {
-            if(start != _r.start)
+            if(tag != _r.tag)
             {
-                return false;
+                if(tag == null || _r.tag == null || !tag.equals(_r.tag))
+                {
+                    return false;
+                }
             }
-            if(size != _r.size)
+            if(!java.util.Arrays.equals(array, _r.array))
             {
                 return false;
             }
@@ -73,19 +74,19 @@ public class TransferSequence implements java.lang.Cloneable, java.io.Serializab
     hashCode()
     {
         int __h = 5381;
-        __h = IceInternal.HashUtil.hashAdd(__h, "::dts::TransferSequence");
-        __h = IceInternal.HashUtil.hashAdd(__h, start);
-        __h = IceInternal.HashUtil.hashAdd(__h, size);
+        __h = IceInternal.HashUtil.hashAdd(__h, "::dts::FileUploadRespond");
+        __h = IceInternal.HashUtil.hashAdd(__h, tag);
+        __h = IceInternal.HashUtil.hashAdd(__h, array);
         return __h;
     }
 
-    public TransferSequence
+    public FileUploadRespond
     clone()
     {
-        TransferSequence c = null;
+        FileUploadRespond c = null;
         try
         {
-            c = (TransferSequence)super.clone();
+            c = (FileUploadRespond)super.clone();
         }
         catch(CloneNotSupportedException ex)
         {
@@ -97,19 +98,19 @@ public class TransferSequence implements java.lang.Cloneable, java.io.Serializab
     public void
     __write(IceInternal.BasicStream __os)
     {
-        __os.writeLong(start);
-        __os.writeLong(size);
+        __os.writeString(tag);
+        SliceArraysHelper.write(__os, array);
     }
 
     public void
     __read(IceInternal.BasicStream __is)
     {
-        start = __is.readLong();
-        size = __is.readLong();
+        tag = __is.readString();
+        array = SliceArraysHelper.read(__is);
     }
 
     static public void
-    __write(IceInternal.BasicStream __os, TransferSequence __v)
+    __write(IceInternal.BasicStream __os, FileUploadRespond __v)
     {
         if(__v == null)
         {
@@ -121,18 +122,18 @@ public class TransferSequence implements java.lang.Cloneable, java.io.Serializab
         }
     }
 
-    static public TransferSequence
-    __read(IceInternal.BasicStream __is, TransferSequence __v)
+    static public FileUploadRespond
+    __read(IceInternal.BasicStream __is, FileUploadRespond __v)
     {
         if(__v == null)
         {
-             __v = new TransferSequence();
+             __v = new FileUploadRespond();
         }
         __v.__read(__is);
         return __v;
     }
     
-    private static final TransferSequence __nullMarshalValue = new TransferSequence();
+    private static final FileUploadRespond __nullMarshalValue = new FileUploadRespond();
 
-    public static final long serialVersionUID = -1219197063L;
+    public static final long serialVersionUID = 900086071L;
 }

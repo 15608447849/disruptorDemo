@@ -21,9 +21,14 @@
 package bottle.transfer.dts;
 
 /**
- * 上传完成
+ * 请求上传文件
  **/
 
-public abstract class Callback_IDataTransferService_uploadComplete extends Ice.OnewayCallback
+public abstract class Callback_IDataTransferService_request
+    extends IceInternal.TwowayCallback implements Ice.TwowayCallbackArg1<bottle.transfer.dts.FileUploadRespond>
 {
+    public final void __completed(Ice.AsyncResult __result)
+    {
+        IDataTransferServicePrxHelper.__request_completed(this, __result);
+    }
 }

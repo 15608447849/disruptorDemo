@@ -20,15 +20,16 @@
 
 package bottle.transfer.dts;
 
-/**
- * 上传已经填充的文件数据片段 成功返回0 ,失败返回-1
- **/
-
-public abstract class Callback_IDataTransferService_uploadSequence
-    extends IceInternal.TwowayCallback implements Ice.TwowayCallbackInt
+public final class FileUploadRespondHolder extends Ice.Holder<FileUploadRespond>
 {
-    public final void __completed(Ice.AsyncResult __result)
+    public
+    FileUploadRespondHolder()
     {
-        IDataTransferServicePrxHelper.__uploadSequence_completed(this, __result);
+    }
+
+    public
+    FileUploadRespondHolder(FileUploadRespond value)
+    {
+        super(value);
     }
 }

@@ -20,16 +20,10 @@
 
 package bottle.transfer.dts;
 
-public final class FileSliceHolder extends Ice.Holder<TransferSequence[]>
-{
-    public
-    FileSliceHolder()
-    {
-    }
+/**
+ * 上传完成
+ **/
 
-    public
-    FileSliceHolder(TransferSequence[] value)
-    {
-        super(value);
-    }
+public abstract class Callback_IDataTransferService_complete extends Ice.OnewayCallback
+{
 }

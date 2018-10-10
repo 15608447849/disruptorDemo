@@ -20,25 +20,28 @@
 
 package bottle.transfer.dts;
 
+/**
+ * 文件上传请求
+ **/
 public class FileUploadRequest implements java.lang.Cloneable, java.io.Serializable
 {
-    public String filePath;
+    public String path;
 
-    public String fileName;
+    public String name;
 
-    public long fileSize;
+    public long size;
 
     public FileUploadRequest()
     {
-        filePath = "";
-        fileName = "";
+        path = "";
+        name = "";
     }
 
-    public FileUploadRequest(String filePath, String fileName, long fileSize)
+    public FileUploadRequest(String path, String name, long size)
     {
-        this.filePath = filePath;
-        this.fileName = fileName;
-        this.fileSize = fileSize;
+        this.path = path;
+        this.name = name;
+        this.size = size;
     }
 
     public boolean
@@ -56,21 +59,21 @@ public class FileUploadRequest implements java.lang.Cloneable, java.io.Serializa
 
         if(_r != null)
         {
-            if(filePath != _r.filePath)
+            if(path != _r.path)
             {
-                if(filePath == null || _r.filePath == null || !filePath.equals(_r.filePath))
+                if(path == null || _r.path == null || !path.equals(_r.path))
                 {
                     return false;
                 }
             }
-            if(fileName != _r.fileName)
+            if(name != _r.name)
             {
-                if(fileName == null || _r.fileName == null || !fileName.equals(_r.fileName))
+                if(name == null || _r.name == null || !name.equals(_r.name))
                 {
                     return false;
                 }
             }
-            if(fileSize != _r.fileSize)
+            if(size != _r.size)
             {
                 return false;
             }
@@ -86,9 +89,9 @@ public class FileUploadRequest implements java.lang.Cloneable, java.io.Serializa
     {
         int __h = 5381;
         __h = IceInternal.HashUtil.hashAdd(__h, "::dts::FileUploadRequest");
-        __h = IceInternal.HashUtil.hashAdd(__h, filePath);
-        __h = IceInternal.HashUtil.hashAdd(__h, fileName);
-        __h = IceInternal.HashUtil.hashAdd(__h, fileSize);
+        __h = IceInternal.HashUtil.hashAdd(__h, path);
+        __h = IceInternal.HashUtil.hashAdd(__h, name);
+        __h = IceInternal.HashUtil.hashAdd(__h, size);
         return __h;
     }
 
@@ -110,17 +113,17 @@ public class FileUploadRequest implements java.lang.Cloneable, java.io.Serializa
     public void
     __write(IceInternal.BasicStream __os)
     {
-        __os.writeString(filePath);
-        __os.writeString(fileName);
-        __os.writeLong(fileSize);
+        __os.writeString(path);
+        __os.writeString(name);
+        __os.writeLong(size);
     }
 
     public void
     __read(IceInternal.BasicStream __is)
     {
-        filePath = __is.readString();
-        fileName = __is.readString();
-        fileSize = __is.readLong();
+        path = __is.readString();
+        name = __is.readString();
+        size = __is.readLong();
     }
 
     static public void
@@ -149,5 +152,5 @@ public class FileUploadRequest implements java.lang.Cloneable, java.io.Serializa
     
     private static final FileUploadRequest __nullMarshalValue = new FileUploadRequest();
 
-    public static final long serialVersionUID = -360873070L;
+    public static final long serialVersionUID = 1422373748L;
 }

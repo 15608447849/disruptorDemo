@@ -1,27 +1,29 @@
 [["java:package:bottle.transfer"]]
 module dts{
-
-    const int SliceMax = 1024;
-
+    /** 文件上传请求 */
     struct FileUploadRequest
     {
-        string filePath;
-        string fileName;
-        long fileSize;
+        string path;
+        string name;
+        long size;
     };
-
-    sequence<byte> DataBytes;//数据
 
     /** 传输序列 */
     struct TransferSequence
     {
-        long tag;
-        long sPoint;//起点
+        long start;//起点
         long size;//数据段大小
-        DataBytes data;//数据
     };
 
-    sequence<TransferSequence> FileSlice;
+    sequence<TransferSequence> SliceArrays;//传输序列数组
+
+    sequence<byte> DataBytes;//字节数据
+
+    struct FileUploadRespond
+    {
+        string tag;//标识
+        SliceArrays array; //文件传输分片信息
+    };
 
 
     /**
@@ -36,16 +38,14 @@ module dts{
     */
 
     interface IDataTransferService{
-        /** 请求文件上传,获取文件上传标识,文件片段序列,失败返回空序列
-        *  文件路径(null则默认),文件名(null则默认),文件大小(必须大于0)
-        */
-        FileSlice requestFileUpload(FileUploadRequest request);
+         /** 请求上传文件 */
+        FileUploadRespond request(FileUploadRequest request);
 
-        /** 上传已经填充的文件数据片段 成功返回0 ,失败返回-1*/
-        int uploadSequence(TransferSequence ts);
+        /** 上传已经填充的文件数据片段 */
+        void transfer(string tag,TransferSequence ts,DataBytes data);
 
         /** 上传完成 */
-        void uploadComplete(long tag);
+        void complete(string tag);
     };
 
 };

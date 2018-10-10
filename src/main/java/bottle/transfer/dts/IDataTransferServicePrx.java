@@ -33,279 +33,259 @@ package bottle.transfer.dts;
 public interface IDataTransferServicePrx extends Ice.ObjectPrx
 {
     /**
-     * 请求文件上传,获取文件上传标识,文件片段序列,失败返回空序列
-     * 文件路径(null则默认),文件名(null则默认),文件大小(必须大于0)
+     * 请求上传文件
      **/
-    public TransferSequence[] requestFileUpload(FileUploadRequest request);
+    public FileUploadRespond request(FileUploadRequest request);
 
     /**
-     * 请求文件上传,获取文件上传标识,文件片段序列,失败返回空序列
-     * 文件路径(null则默认),文件名(null则默认),文件大小(必须大于0)
+     * 请求上传文件
      * @param __ctx The Context map to send with the invocation.
      **/
-    public TransferSequence[] requestFileUpload(FileUploadRequest request, java.util.Map<String, String> __ctx);
+    public FileUploadRespond request(FileUploadRequest request, java.util.Map<String, String> __ctx);
 
     /**
-     * 请求文件上传,获取文件上传标识,文件片段序列,失败返回空序列
-     * 文件路径(null则默认),文件名(null则默认),文件大小(必须大于0)
+     * 请求上传文件
      * @return The asynchronous result object.
      **/
-    public Ice.AsyncResult begin_requestFileUpload(FileUploadRequest request);
+    public Ice.AsyncResult begin_request(FileUploadRequest request);
 
     /**
-     * 请求文件上传,获取文件上传标识,文件片段序列,失败返回空序列
-     * 文件路径(null则默认),文件名(null则默认),文件大小(必须大于0)
+     * 请求上传文件
      * @param __ctx The Context map to send with the invocation.
      * @return The asynchronous result object.
      **/
-    public Ice.AsyncResult begin_requestFileUpload(FileUploadRequest request, java.util.Map<String, String> __ctx);
+    public Ice.AsyncResult begin_request(FileUploadRequest request, java.util.Map<String, String> __ctx);
 
     /**
-     * 请求文件上传,获取文件上传标识,文件片段序列,失败返回空序列
-     * 文件路径(null则默认),文件名(null则默认),文件大小(必须大于0)
+     * 请求上传文件
      * @param __cb The asynchronous callback object.
      * @return The asynchronous result object.
      **/
-    public Ice.AsyncResult begin_requestFileUpload(FileUploadRequest request, Ice.Callback __cb);
+    public Ice.AsyncResult begin_request(FileUploadRequest request, Ice.Callback __cb);
 
     /**
-     * 请求文件上传,获取文件上传标识,文件片段序列,失败返回空序列
-     * 文件路径(null则默认),文件名(null则默认),文件大小(必须大于0)
+     * 请求上传文件
      * @param __ctx The Context map to send with the invocation.
      * @param __cb The asynchronous callback object.
      * @return The asynchronous result object.
      **/
-    public Ice.AsyncResult begin_requestFileUpload(FileUploadRequest request, java.util.Map<String, String> __ctx, Ice.Callback __cb);
+    public Ice.AsyncResult begin_request(FileUploadRequest request, java.util.Map<String, String> __ctx, Ice.Callback __cb);
 
     /**
-     * 请求文件上传,获取文件上传标识,文件片段序列,失败返回空序列
-     * 文件路径(null则默认),文件名(null则默认),文件大小(必须大于0)
+     * 请求上传文件
      * @param __cb The asynchronous callback object.
      * @return The asynchronous result object.
      **/
-    public Ice.AsyncResult begin_requestFileUpload(FileUploadRequest request, Callback_IDataTransferService_requestFileUpload __cb);
+    public Ice.AsyncResult begin_request(FileUploadRequest request, Callback_IDataTransferService_request __cb);
 
     /**
-     * 请求文件上传,获取文件上传标识,文件片段序列,失败返回空序列
-     * 文件路径(null则默认),文件名(null则默认),文件大小(必须大于0)
+     * 请求上传文件
      * @param __ctx The Context map to send with the invocation.
      * @param __cb The asynchronous callback object.
      * @return The asynchronous result object.
      **/
-    public Ice.AsyncResult begin_requestFileUpload(FileUploadRequest request, java.util.Map<String, String> __ctx, Callback_IDataTransferService_requestFileUpload __cb);
+    public Ice.AsyncResult begin_request(FileUploadRequest request, java.util.Map<String, String> __ctx, Callback_IDataTransferService_request __cb);
 
     /**
-     * 请求文件上传,获取文件上传标识,文件片段序列,失败返回空序列
-     * 文件路径(null则默认),文件名(null则默认),文件大小(必须大于0)
+     * 请求上传文件
      * @param __responseCb The lambda response callback.
      * @param __exceptionCb The lambda exception callback.
      * @return The asynchronous result object.
      **/
-    public Ice.AsyncResult begin_requestFileUpload(FileUploadRequest request, 
-                                                   IceInternal.Functional_GenericCallback1<TransferSequence[]> __responseCb, 
-                                                   IceInternal.Functional_GenericCallback1<Ice.Exception> __exceptionCb);
+    public Ice.AsyncResult begin_request(FileUploadRequest request, 
+                                         IceInternal.Functional_GenericCallback1<FileUploadRespond> __responseCb, 
+                                         IceInternal.Functional_GenericCallback1<Ice.Exception> __exceptionCb);
 
     /**
-     * 请求文件上传,获取文件上传标识,文件片段序列,失败返回空序列
-     * 文件路径(null则默认),文件名(null则默认),文件大小(必须大于0)
+     * 请求上传文件
      * @param __responseCb The lambda response callback.
      * @param __exceptionCb The lambda exception callback.
      * @param __sentCb The lambda sent callback.
      * @return The asynchronous result object.
      **/
-    public Ice.AsyncResult begin_requestFileUpload(FileUploadRequest request, 
-                                                   IceInternal.Functional_GenericCallback1<TransferSequence[]> __responseCb, 
-                                                   IceInternal.Functional_GenericCallback1<Ice.Exception> __exceptionCb, 
-                                                   IceInternal.Functional_BoolCallback __sentCb);
+    public Ice.AsyncResult begin_request(FileUploadRequest request, 
+                                         IceInternal.Functional_GenericCallback1<FileUploadRespond> __responseCb, 
+                                         IceInternal.Functional_GenericCallback1<Ice.Exception> __exceptionCb, 
+                                         IceInternal.Functional_BoolCallback __sentCb);
 
     /**
-     * 请求文件上传,获取文件上传标识,文件片段序列,失败返回空序列
-     * 文件路径(null则默认),文件名(null则默认),文件大小(必须大于0)
+     * 请求上传文件
      * @param __ctx The Context map to send with the invocation.
      * @param __responseCb The lambda response callback.
      * @param __exceptionCb The lambda exception callback.
      * @return The asynchronous result object.
      **/
-    public Ice.AsyncResult begin_requestFileUpload(FileUploadRequest request, 
-                                                   java.util.Map<String, String> __ctx, 
-                                                   IceInternal.Functional_GenericCallback1<TransferSequence[]> __responseCb, 
-                                                   IceInternal.Functional_GenericCallback1<Ice.Exception> __exceptionCb);
+    public Ice.AsyncResult begin_request(FileUploadRequest request, 
+                                         java.util.Map<String, String> __ctx, 
+                                         IceInternal.Functional_GenericCallback1<FileUploadRespond> __responseCb, 
+                                         IceInternal.Functional_GenericCallback1<Ice.Exception> __exceptionCb);
 
     /**
-     * 请求文件上传,获取文件上传标识,文件片段序列,失败返回空序列
-     * 文件路径(null则默认),文件名(null则默认),文件大小(必须大于0)
+     * 请求上传文件
      * @param __ctx The Context map to send with the invocation.
      * @param __responseCb The lambda response callback.
      * @param __exceptionCb The lambda exception callback.
      * @param __sentCb The lambda sent callback.
      * @return The asynchronous result object.
      **/
-    public Ice.AsyncResult begin_requestFileUpload(FileUploadRequest request, 
-                                                   java.util.Map<String, String> __ctx, 
-                                                   IceInternal.Functional_GenericCallback1<TransferSequence[]> __responseCb, 
-                                                   IceInternal.Functional_GenericCallback1<Ice.Exception> __exceptionCb, 
-                                                   IceInternal.Functional_BoolCallback __sentCb);
+    public Ice.AsyncResult begin_request(FileUploadRequest request, 
+                                         java.util.Map<String, String> __ctx, 
+                                         IceInternal.Functional_GenericCallback1<FileUploadRespond> __responseCb, 
+                                         IceInternal.Functional_GenericCallback1<Ice.Exception> __exceptionCb, 
+                                         IceInternal.Functional_BoolCallback __sentCb);
 
     /**
-     * 请求文件上传,获取文件上传标识,文件片段序列,失败返回空序列
-     * 文件路径(null则默认),文件名(null则默认),文件大小(必须大于0)
+     * 请求上传文件
      * @param __result The asynchronous result object.
      **/
-    public TransferSequence[] end_requestFileUpload(Ice.AsyncResult __result);
+    public FileUploadRespond end_request(Ice.AsyncResult __result);
 
     /**
-     * 上传已经填充的文件数据片段 成功返回0 ,失败返回-1
+     * 上传已经填充的文件数据片段
      **/
-    public int uploadSequence(TransferSequence ts);
+    public void transfer(String tag, TransferSequence ts, byte[] data);
 
     /**
-     * 上传已经填充的文件数据片段 成功返回0 ,失败返回-1
+     * 上传已经填充的文件数据片段
      * @param __ctx The Context map to send with the invocation.
      **/
-    public int uploadSequence(TransferSequence ts, java.util.Map<String, String> __ctx);
+    public void transfer(String tag, TransferSequence ts, byte[] data, java.util.Map<String, String> __ctx);
 
     /**
-     * 上传已经填充的文件数据片段 成功返回0 ,失败返回-1
+     * 上传已经填充的文件数据片段
      * @return The asynchronous result object.
      **/
-    public Ice.AsyncResult begin_uploadSequence(TransferSequence ts);
+    public Ice.AsyncResult begin_transfer(String tag, TransferSequence ts, byte[] data);
 
     /**
-     * 上传已经填充的文件数据片段 成功返回0 ,失败返回-1
+     * 上传已经填充的文件数据片段
      * @param __ctx The Context map to send with the invocation.
      * @return The asynchronous result object.
      **/
-    public Ice.AsyncResult begin_uploadSequence(TransferSequence ts, java.util.Map<String, String> __ctx);
+    public Ice.AsyncResult begin_transfer(String tag, TransferSequence ts, byte[] data, java.util.Map<String, String> __ctx);
 
     /**
-     * 上传已经填充的文件数据片段 成功返回0 ,失败返回-1
+     * 上传已经填充的文件数据片段
      * @param __cb The asynchronous callback object.
      * @return The asynchronous result object.
      **/
-    public Ice.AsyncResult begin_uploadSequence(TransferSequence ts, Ice.Callback __cb);
+    public Ice.AsyncResult begin_transfer(String tag, TransferSequence ts, byte[] data, Ice.Callback __cb);
 
     /**
-     * 上传已经填充的文件数据片段 成功返回0 ,失败返回-1
-     * @param __ctx The Context map to send with the invocation.
-     * @param __cb The asynchronous callback object.
-     * @return The asynchronous result object.
-     **/
-    public Ice.AsyncResult begin_uploadSequence(TransferSequence ts, java.util.Map<String, String> __ctx, Ice.Callback __cb);
-
-    /**
-     * 上传已经填充的文件数据片段 成功返回0 ,失败返回-1
-     * @param __cb The asynchronous callback object.
-     * @return The asynchronous result object.
-     **/
-    public Ice.AsyncResult begin_uploadSequence(TransferSequence ts, Callback_IDataTransferService_uploadSequence __cb);
-
-    /**
-     * 上传已经填充的文件数据片段 成功返回0 ,失败返回-1
+     * 上传已经填充的文件数据片段
      * @param __ctx The Context map to send with the invocation.
      * @param __cb The asynchronous callback object.
      * @return The asynchronous result object.
      **/
-    public Ice.AsyncResult begin_uploadSequence(TransferSequence ts, java.util.Map<String, String> __ctx, Callback_IDataTransferService_uploadSequence __cb);
+    public Ice.AsyncResult begin_transfer(String tag, TransferSequence ts, byte[] data, java.util.Map<String, String> __ctx, Ice.Callback __cb);
 
     /**
-     * 上传已经填充的文件数据片段 成功返回0 ,失败返回-1
+     * 上传已经填充的文件数据片段
+     * @param __cb The asynchronous callback object.
+     * @return The asynchronous result object.
+     **/
+    public Ice.AsyncResult begin_transfer(String tag, TransferSequence ts, byte[] data, Callback_IDataTransferService_transfer __cb);
+
+    /**
+     * 上传已经填充的文件数据片段
+     * @param __ctx The Context map to send with the invocation.
+     * @param __cb The asynchronous callback object.
+     * @return The asynchronous result object.
+     **/
+    public Ice.AsyncResult begin_transfer(String tag, TransferSequence ts, byte[] data, java.util.Map<String, String> __ctx, Callback_IDataTransferService_transfer __cb);
+
+    /**
+     * 上传已经填充的文件数据片段
      * @param __responseCb The lambda response callback.
      * @param __exceptionCb The lambda exception callback.
      * @return The asynchronous result object.
      **/
-    public Ice.AsyncResult begin_uploadSequence(TransferSequence ts, 
-                                                IceInternal.Functional_IntCallback __responseCb, 
-                                                IceInternal.Functional_GenericCallback1<Ice.Exception> __exceptionCb);
+    public Ice.AsyncResult begin_transfer(String tag, 
+                                          TransferSequence ts, 
+                                          byte[] data, 
+                                          IceInternal.Functional_VoidCallback __responseCb, 
+                                          IceInternal.Functional_GenericCallback1<Ice.Exception> __exceptionCb);
 
     /**
-     * 上传已经填充的文件数据片段 成功返回0 ,失败返回-1
-     * @param __responseCb The lambda response callback.
-     * @param __exceptionCb The lambda exception callback.
-     * @param __sentCb The lambda sent callback.
-     * @return The asynchronous result object.
-     **/
-    public Ice.AsyncResult begin_uploadSequence(TransferSequence ts, 
-                                                IceInternal.Functional_IntCallback __responseCb, 
-                                                IceInternal.Functional_GenericCallback1<Ice.Exception> __exceptionCb, 
-                                                IceInternal.Functional_BoolCallback __sentCb);
-
-    /**
-     * 上传已经填充的文件数据片段 成功返回0 ,失败返回-1
-     * @param __ctx The Context map to send with the invocation.
-     * @param __responseCb The lambda response callback.
-     * @param __exceptionCb The lambda exception callback.
-     * @return The asynchronous result object.
-     **/
-    public Ice.AsyncResult begin_uploadSequence(TransferSequence ts, 
-                                                java.util.Map<String, String> __ctx, 
-                                                IceInternal.Functional_IntCallback __responseCb, 
-                                                IceInternal.Functional_GenericCallback1<Ice.Exception> __exceptionCb);
-
-    /**
-     * 上传已经填充的文件数据片段 成功返回0 ,失败返回-1
-     * @param __ctx The Context map to send with the invocation.
+     * 上传已经填充的文件数据片段
      * @param __responseCb The lambda response callback.
      * @param __exceptionCb The lambda exception callback.
      * @param __sentCb The lambda sent callback.
      * @return The asynchronous result object.
      **/
-    public Ice.AsyncResult begin_uploadSequence(TransferSequence ts, 
-                                                java.util.Map<String, String> __ctx, 
-                                                IceInternal.Functional_IntCallback __responseCb, 
-                                                IceInternal.Functional_GenericCallback1<Ice.Exception> __exceptionCb, 
-                                                IceInternal.Functional_BoolCallback __sentCb);
+    public Ice.AsyncResult begin_transfer(String tag, 
+                                          TransferSequence ts, 
+                                          byte[] data, 
+                                          IceInternal.Functional_VoidCallback __responseCb, 
+                                          IceInternal.Functional_GenericCallback1<Ice.Exception> __exceptionCb, 
+                                          IceInternal.Functional_BoolCallback __sentCb);
 
     /**
-     * 上传已经填充的文件数据片段 成功返回0 ,失败返回-1
+     * 上传已经填充的文件数据片段
+     * @param __ctx The Context map to send with the invocation.
+     * @param __responseCb The lambda response callback.
+     * @param __exceptionCb The lambda exception callback.
+     * @return The asynchronous result object.
+     **/
+    public Ice.AsyncResult begin_transfer(String tag, 
+                                          TransferSequence ts, 
+                                          byte[] data, 
+                                          java.util.Map<String, String> __ctx, 
+                                          IceInternal.Functional_VoidCallback __responseCb, 
+                                          IceInternal.Functional_GenericCallback1<Ice.Exception> __exceptionCb);
+
+    /**
+     * 上传已经填充的文件数据片段
+     * @param __ctx The Context map to send with the invocation.
+     * @param __responseCb The lambda response callback.
+     * @param __exceptionCb The lambda exception callback.
+     * @param __sentCb The lambda sent callback.
+     * @return The asynchronous result object.
+     **/
+    public Ice.AsyncResult begin_transfer(String tag, 
+                                          TransferSequence ts, 
+                                          byte[] data, 
+                                          java.util.Map<String, String> __ctx, 
+                                          IceInternal.Functional_VoidCallback __responseCb, 
+                                          IceInternal.Functional_GenericCallback1<Ice.Exception> __exceptionCb, 
+                                          IceInternal.Functional_BoolCallback __sentCb);
+
+    /**
+     * 上传已经填充的文件数据片段
      * @param __result The asynchronous result object.
      **/
-    public int end_uploadSequence(Ice.AsyncResult __result);
+    public void end_transfer(Ice.AsyncResult __result);
 
     /**
      * 上传完成
      **/
-    public void uploadComplete(long tag);
+    public void complete(String tag);
 
     /**
      * 上传完成
      * @param __ctx The Context map to send with the invocation.
      **/
-    public void uploadComplete(long tag, java.util.Map<String, String> __ctx);
+    public void complete(String tag, java.util.Map<String, String> __ctx);
 
     /**
      * 上传完成
      * @return The asynchronous result object.
      **/
-    public Ice.AsyncResult begin_uploadComplete(long tag);
+    public Ice.AsyncResult begin_complete(String tag);
 
     /**
      * 上传完成
      * @param __ctx The Context map to send with the invocation.
      * @return The asynchronous result object.
      **/
-    public Ice.AsyncResult begin_uploadComplete(long tag, java.util.Map<String, String> __ctx);
+    public Ice.AsyncResult begin_complete(String tag, java.util.Map<String, String> __ctx);
 
     /**
      * 上传完成
      * @param __cb The asynchronous callback object.
      * @return The asynchronous result object.
      **/
-    public Ice.AsyncResult begin_uploadComplete(long tag, Ice.Callback __cb);
-
-    /**
-     * 上传完成
-     * @param __ctx The Context map to send with the invocation.
-     * @param __cb The asynchronous callback object.
-     * @return The asynchronous result object.
-     **/
-    public Ice.AsyncResult begin_uploadComplete(long tag, java.util.Map<String, String> __ctx, Ice.Callback __cb);
-
-    /**
-     * 上传完成
-     * @param __cb The asynchronous callback object.
-     * @return The asynchronous result object.
-     **/
-    public Ice.AsyncResult begin_uploadComplete(long tag, Callback_IDataTransferService_uploadComplete __cb);
+    public Ice.AsyncResult begin_complete(String tag, Ice.Callback __cb);
 
     /**
      * 上传完成
@@ -313,7 +293,22 @@ public interface IDataTransferServicePrx extends Ice.ObjectPrx
      * @param __cb The asynchronous callback object.
      * @return The asynchronous result object.
      **/
-    public Ice.AsyncResult begin_uploadComplete(long tag, java.util.Map<String, String> __ctx, Callback_IDataTransferService_uploadComplete __cb);
+    public Ice.AsyncResult begin_complete(String tag, java.util.Map<String, String> __ctx, Ice.Callback __cb);
+
+    /**
+     * 上传完成
+     * @param __cb The asynchronous callback object.
+     * @return The asynchronous result object.
+     **/
+    public Ice.AsyncResult begin_complete(String tag, Callback_IDataTransferService_complete __cb);
+
+    /**
+     * 上传完成
+     * @param __ctx The Context map to send with the invocation.
+     * @param __cb The asynchronous callback object.
+     * @return The asynchronous result object.
+     **/
+    public Ice.AsyncResult begin_complete(String tag, java.util.Map<String, String> __ctx, Callback_IDataTransferService_complete __cb);
 
     /**
      * 上传完成
@@ -321,51 +316,51 @@ public interface IDataTransferServicePrx extends Ice.ObjectPrx
      * @param __exceptionCb The lambda exception callback.
      * @return The asynchronous result object.
      **/
-    public Ice.AsyncResult begin_uploadComplete(long tag, 
-                                                IceInternal.Functional_VoidCallback __responseCb, 
-                                                IceInternal.Functional_GenericCallback1<Ice.Exception> __exceptionCb);
+    public Ice.AsyncResult begin_complete(String tag, 
+                                          IceInternal.Functional_VoidCallback __responseCb, 
+                                          IceInternal.Functional_GenericCallback1<Ice.Exception> __exceptionCb);
 
     /**
      * 上传完成
-     * @param __responseCb The lambda response callback.
-     * @param __exceptionCb The lambda exception callback.
-     * @param __sentCb The lambda sent callback.
-     * @return The asynchronous result object.
-     **/
-    public Ice.AsyncResult begin_uploadComplete(long tag, 
-                                                IceInternal.Functional_VoidCallback __responseCb, 
-                                                IceInternal.Functional_GenericCallback1<Ice.Exception> __exceptionCb, 
-                                                IceInternal.Functional_BoolCallback __sentCb);
-
-    /**
-     * 上传完成
-     * @param __ctx The Context map to send with the invocation.
-     * @param __responseCb The lambda response callback.
-     * @param __exceptionCb The lambda exception callback.
-     * @return The asynchronous result object.
-     **/
-    public Ice.AsyncResult begin_uploadComplete(long tag, 
-                                                java.util.Map<String, String> __ctx, 
-                                                IceInternal.Functional_VoidCallback __responseCb, 
-                                                IceInternal.Functional_GenericCallback1<Ice.Exception> __exceptionCb);
-
-    /**
-     * 上传完成
-     * @param __ctx The Context map to send with the invocation.
      * @param __responseCb The lambda response callback.
      * @param __exceptionCb The lambda exception callback.
      * @param __sentCb The lambda sent callback.
      * @return The asynchronous result object.
      **/
-    public Ice.AsyncResult begin_uploadComplete(long tag, 
-                                                java.util.Map<String, String> __ctx, 
-                                                IceInternal.Functional_VoidCallback __responseCb, 
-                                                IceInternal.Functional_GenericCallback1<Ice.Exception> __exceptionCb, 
-                                                IceInternal.Functional_BoolCallback __sentCb);
+    public Ice.AsyncResult begin_complete(String tag, 
+                                          IceInternal.Functional_VoidCallback __responseCb, 
+                                          IceInternal.Functional_GenericCallback1<Ice.Exception> __exceptionCb, 
+                                          IceInternal.Functional_BoolCallback __sentCb);
+
+    /**
+     * 上传完成
+     * @param __ctx The Context map to send with the invocation.
+     * @param __responseCb The lambda response callback.
+     * @param __exceptionCb The lambda exception callback.
+     * @return The asynchronous result object.
+     **/
+    public Ice.AsyncResult begin_complete(String tag, 
+                                          java.util.Map<String, String> __ctx, 
+                                          IceInternal.Functional_VoidCallback __responseCb, 
+                                          IceInternal.Functional_GenericCallback1<Ice.Exception> __exceptionCb);
+
+    /**
+     * 上传完成
+     * @param __ctx The Context map to send with the invocation.
+     * @param __responseCb The lambda response callback.
+     * @param __exceptionCb The lambda exception callback.
+     * @param __sentCb The lambda sent callback.
+     * @return The asynchronous result object.
+     **/
+    public Ice.AsyncResult begin_complete(String tag, 
+                                          java.util.Map<String, String> __ctx, 
+                                          IceInternal.Functional_VoidCallback __responseCb, 
+                                          IceInternal.Functional_GenericCallback1<Ice.Exception> __exceptionCb, 
+                                          IceInternal.Functional_BoolCallback __sentCb);
 
     /**
      * 上传完成
      * @param __result The asynchronous result object.
      **/
-    public void end_uploadComplete(Ice.AsyncResult __result);
+    public void end_complete(Ice.AsyncResult __result);
 }

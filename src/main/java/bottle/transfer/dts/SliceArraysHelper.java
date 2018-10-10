@@ -20,7 +20,7 @@
 
 package bottle.transfer.dts;
 
-public final class FileSliceHelper
+public final class SliceArraysHelper
 {
     public static void
     write(IceInternal.BasicStream __os, TransferSequence[] __v)
@@ -43,7 +43,7 @@ public final class FileSliceHelper
     read(IceInternal.BasicStream __is)
     {
         TransferSequence[] __v;
-        final int __len0 = __is.readAndCheckSeqSize(25);
+        final int __len0 = __is.readAndCheckSeqSize(16);
         __v = new TransferSequence[__len0];
         for(int __i0 = 0; __i0 < __len0; __i0++)
         {
