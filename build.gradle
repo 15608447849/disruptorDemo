@@ -3,6 +3,7 @@ buildscript {
 
     repositories {
         mavenCentral()
+        jcenter()
     }
     dependencies {
         classpath "org.jetbrains.kotlin:kotlin-gradle-plugin:$kotlin_version"
@@ -11,6 +12,7 @@ buildscript {
 
 plugins {
     id 'java'
+    id "com.github.johnrengelman.shadow" version "4.0.2"
 }
 
 group 'lee.test'
@@ -22,12 +24,16 @@ sourceCompatibility = 1.8
 
 repositories {
     mavenCentral()
+    maven {
+        url "https://plugins.gradle.org/m2/"
+    }
 }
 
 dependencies {
     implementation fileTree(dir: 'libs', exclude: ['android-support*.jar'], include: ['*.jar'])
     implementation "org.jetbrains.kotlin:kotlin-stdlib-jdk8:$kotlin_version"
     implementation 'com.lmax:disruptor:3.4.2'
+
 }
 
 compileKotlin {
@@ -35,4 +41,25 @@ compileKotlin {
 }
 compileTestKotlin {
     kotlinOptions.jvmTarget = "1.8"
+}
+
+////指定编译的编码
+tasks.withType(JavaCompile){
+    options.encoding = "UTF-8"
+}
+
+
+shadowJar {
+    baseName = 'fileUploadServer'
+    classifier = null
+    version = null
+    manifest{
+        attributes 'Main-Class': 'Main'
+    }
+    dependencies {
+        include(dependency(fileTree(dir: 'libs', exclude: ['android-support*.jar'], include: ['*.jar'])))
+        include(dependency("org.jetbrains.kotlin:kotlin-stdlib-jdk8:$kotlin_version"))
+        include(dependency('com.lmax:disruptor:3.4.2'))
+
+    }
 }

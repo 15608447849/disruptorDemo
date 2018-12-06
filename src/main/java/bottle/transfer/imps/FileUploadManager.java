@@ -8,13 +8,35 @@ import java.util.HashMap;
 
 public class FileUploadManager extends Thread {
 
-   static class Build{
+
+    void saveFileData(String tag, long start, byte[] bytes) {
+        build.getFileUpload().saveFileData(tag,start,bytes,build.getMap());
+    }
+
+    private static String str(String v,String def){
+        if (v == null || v.length() == 0) return def;
+        return v;
+    }
+
+    String createEmptyFileAndBindTag(String path, String name, long size) {
+        return build.getFileUpload().createEmptyFileAndBindTag(
+                build.getDirectory(),
+                str(path,"/default/"),
+                str(name,System.nanoTime()+".unknown"),
+                size,
+                build.getMap());
+    }
+
+    void fileComplete(String tag) {
+        build.getFileUpload().fileComplete(tag,build.getMap());
+    }
+
+    static class Build{
        private File directory = new File(".");
-       private long loopTime = 30*1000L;
-       private long idleTime = 15 * 1000L;
+       private long loopTime = 30 * 1000L;
+       private long idleTime = 5 * 30 * 1000L;
        private IFileUpload fileUpload = new FileUploadDefault();
        private final HashMap<String,FileUp> map = new HashMap<>();
-       private final Object lock = new Object();
 
         Build setDirectory(File directory) {
             this.directory = directory;
@@ -56,10 +78,6 @@ public class FileUploadManager extends Thread {
            return map;
        }
 
-       public Object getLock() {
-           return lock;
-       }
-
        public FileUploadManager  create(){
             return new FileUploadManager(this);
         }
@@ -79,10 +97,8 @@ public class FileUploadManager extends Thread {
     public void run() {
         while (true){
             try {
-                synchronized (build.lock){
-                        build.lock.wait(build.loopTime);
-                }
-                build.fileUpload.watchFileComplete(build.map,build.idleTime);
+                sleep(build.loopTime);
+                build.getFileUpload().watchCacheFileUp(build.idleTime);
             } catch (Exception e) {
                 e.printStackTrace();
             }
